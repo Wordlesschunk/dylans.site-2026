@@ -6,9 +6,11 @@ defineProps<{
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="title">{{ name }}</h1>
-    <h3 class="subtitle">{{ role }}</h3>
+  <div class="header-text">
+    <div class="text">
+      <h1 class="title">{{ name }}</h1>
+      <h3 class="subtitle">{{ role }}</h3>
+    </div>
 
     <div class="icons">
       <a href="#" aria-label="GitHub" class="icon">
@@ -25,24 +27,26 @@ defineProps<{
 </template>
 
 <style scoped>
-.greetings {
+.header-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 1rem;
-  padding: 2rem 1rem;
+  padding: 4rem 2rem 2rem 2rem;
+}
+
+.text {
+  text-align: left;
 }
 
 .title {
   font-weight: 600;
-  font-size: 2.4rem;
+  font-size: clamp(2rem, 6vw, 5.4rem);
   color: #2ecc71;
   margin: 0;
 }
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 4vw, 3.2rem);
   color: #555;
   margin: 0;
 }
@@ -50,11 +54,11 @@ defineProps<{
 .icons {
   display: flex;
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .icon {
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   color: #2c3e50;
   transition: color 0.3s ease, transform 0.2s ease;
 }
@@ -65,9 +69,9 @@ defineProps<{
 }
 
 @media (min-width: 1024px) {
-  .greetings {
-    align-items: flex-start;
-    text-align: left;
+  .header-text {
+    padding-left: 6rem;
+    padding-right: 4rem;
   }
 }
 </style>

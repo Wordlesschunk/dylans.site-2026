@@ -1,46 +1,54 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 import LandingHeader from "@/components/LandingHeader.vue";
+import Divider from "@/components/Divider.vue";
+import PortfolioCard from "@/components/PortfolioCard.vue";
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <LandingHeader name="Dylan Jennings" role="Software Engineer" />
-    </div>
-  </header>
+  <div class="page-container">
+    <header>
+      <LandingHeader role="Fubs" name="Dylan Jennings"/>
+    </header>
 
-  <main>
-    <TheWelcome />
-  </main>
+    <Divider/>
+
+    <main>
+      <PortfolioCard/>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Dylan Jennings. All rights reserved.</p>
+    </footer>
+  </div>
 </template>
 
 <style scoped>
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 header {
-  line-height: 1.5;
+  padding: 1rem;
+  text-align: left;
+  margin: 0;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+main {
+  background-color: #212121;
+  color: #f0f0f0;
+  padding: 1rem;
+  flex: 1;
+  text-align: left;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+footer {
+  background-color: #121212;
+  color: #888;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  border-top: 1px solid #333;
 }
 </style>
